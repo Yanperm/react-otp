@@ -16,13 +16,13 @@ class App extends React.Component {
         this.onSignInSubmit();
         console.log("Recaptca varified")
       },
-      defaultCountry: "IN"
+      defaultCountry: "TH"
     });
   }
   onSignInSubmit = (e) => {
     e.preventDefault()
     this.configureCaptcha()
-    const phoneNumber = "+91" + this.state.mobile
+    const phoneNumber = "+66" + this.state.mobile
     console.log(phoneNumber)
     const appVerifier = window.recaptchaVerifier;
     firebase.auth().signInWithPhoneNumber(phoneNumber, appVerifier)
@@ -46,7 +46,7 @@ class App extends React.Component {
       // User signed in successfully.
       const user = result.user;
       console.log(JSON.stringify(user))
-      alert("User is verified")
+      alert("สมัครสมาชิกเรียบร้อยแล้ว")
       // ...
     }).catch((error) => {
       // User couldn't sign in (bad verification code?)
